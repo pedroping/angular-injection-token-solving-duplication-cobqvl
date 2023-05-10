@@ -1,0 +1,52 @@
+<div class="container">
+  <h1 class="heading"><strong>Angular Injection Token </strong>Demo</h1>
+
+  <button type="button" (click)="getProducts()">Get Products</button>
+
+  <ul style="font-size:14px;">
+    <li>We have two modules ProductModule & SomeOtherModule</li>
+    <li>
+      ProductModule Provides ProductService using the PRODUCTSERVICE instance
+      injection Token
+    </li>
+    <li>
+      SomeOtherModule Provides SomeService using the PRODUCTSERVICE instance of
+      injection Token
+    </li>
+    <li>
+      AppComponent uses the injection token PRODUCTSERVICE inject the
+      productService from ProductModule/ProductService
+    </li>
+
+    <li>We import both Modules in the appModule</li>
+    <li>
+      The Order of import does not matter. AppComponent will always get the
+      PRODUCTSERVICE from ProductModule/ProductService
+    </li>
+  </ul>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.productID }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<br /><br /><br /><br /><br /><br />
+Read More
+<a href="https://www.tektutorialshub.com/angular/injection-token-in-angular/"
+  >Injection Token</a
+>
